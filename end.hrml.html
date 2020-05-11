@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>spartacoding</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+header, nav, section {
+  border: 1px solid #999;
+  margin: 5px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+nav {
+  float: left;
+  height: 1700px;
+  width: 200px;
+  background-color:#FFFFFF;
+  color: blue;
+}
+
+section {
+  background-color: white;
+  width: auto;
+  text-align: center;
+  margin-left: 120px;
+  margin-right: auto;
+  float: left;
+}
+
+h1 {
+  text-align: center;
+}
+
+.search_q1 {
+  padding: 30px;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+</style>
+    <!--검색 기능 구현-->
+<script>
+
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+</script>
+
+
+  </head>
+  <body>
+
+      <header>
+      <div class="header-bg1">
+            <img src="cocktail/logo.png" width="300px" height="200px" align="center" >
+      </div>
+    </header>
+
+      <nav class="info_side">
+        <ul>
+          <li><a href="">  칵테일 추천받기 </a></li>
+          <li><a href="#"> 칵테일 찾기 </a></li>
+          <li><a href="#"> 주류 정보 </a></li>
+        </ul>
+      </nav>
+
+
+      <section>
+        <div class="container">
+          <h2>칵테일 종류 검색하기</h2>
+          <p>검색창에 입력하시면 됩니다.</p>
+          <input class="form-control" id="myInput" type="text" placeholder="검색">
+          <br>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th align=center valign=middle> 이름 </th>
+                <th align=center valign=middle> 이미지 </th>
+                <th> 스타일 </th>
+                <th> 예상도수 </th>
+                <th> 베이스 </th>
+                <th> 부재료 </th>
+                <th> 만드는법 </th>
+                <th> 동영상 </th>
+              </tr>
+            </thead>
+            <tbody id="myTable">
+              <tr>
+                <td> 마티니 </td>
+                <td><img src="cocktail/마티니.jpg" width="100px" height="80px"></td>
+                <td> 마티니 </td>
+                <td> 40 </td>
+                <td> Gin </td>
+                <td> 올리브 </td>
+                <td> 진5온스 스터링 </td>
+                <td><a href="https://www.youtube.com/watch?v=YvbWln7aQ4o"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 모히또 </td>
+                <td><img src="cocktail/모히또.png" width="100px" height="80px"></td></td>
+                <td> 롱드링크 </td>
+                <td> 18 </td>
+                <td> Rum </td>
+                <td> 라임, 애플민트, 크러쉬드아이스, 황설탕, 카린스 </td>
+                <td> 라임 1개와 애플민트, 황설탕을 섞고 머들링 후 럼... </td>
+                <td><a href="https://www.youtube.com/watch?v=8getArw9Ryk"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> B-52 </td>
+                <td><img src="cocktail/b-52.jpg" width="100px" height="80px"></td></td>
+                <td> 슈터 </td>
+                <td> 27 </td>
+                <td> Liquer </td>
+                <td> 깔루아, 베일리스, 바카디 151 </td>
+                <td> 깔루아 1온스, 베일리스 1온스, 바카디151 1온스 </td>
+                <td><a href="https://www.youtube.com/watch?v=4Pxcl_VwHVU"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 진토닉 </td>
+                <td><img src="cocktail/진토닉.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 14 </td>
+                <td> Gin </td>
+                <td> 진, 토닉, 라임 </td>
+                <td> 8온스 텀블러에 드라이진을 넣고 난 후, 얼음을 넣고, 토닉워터로 채운후, 레몬 슬라이스로 장식 </td>
+                <td><a href="https://www.youtube.com/watch?v=lgxhnhXNYAI"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 블랙러시안 </td>
+                <td><img src="cocktail/블랙러시안.jpg" width="100px" height="80px"></td>
+                <td> 스타일5 </td>
+                <td> 37 </td>
+                <td> Vodka </td>
+                <td> 보드카 40ml, <br> 커피 리큐어 20ml </td>
+                <td> 글래스에 보드카와 커피 리큐어를 넣고 난 후 얼음을 넣고 가볍게 젓는다.</td>
+                <td><a href="https://www.youtube.com/watch?v=eUUVkyjHv1k"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 카이피리냐 </td>
+                <td><img src="cocktail/카이피리냐.jpg" width="100px" height="80px"></td>
+                <td> 스타일6 </td>
+                <td> 25~30% </td>
+                <td> 카샤사 </td>
+                <td> 비정제 설탕, 라인, 얼음 </td>
+                <td> 라임을 8조각으로 잘라 설탕 시럽에 담궈 머들링을 한 후, 셰이커에 얼음과 카샤사와 혼합하여 흔든다. </td>
+                <td><a href="https://www.youtube.com/watch?v=OMdGYHz6uho"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 마가리타 </td>
+                <td><img src="cocktail/마가리타.png" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 30 </td>
+                <td> 테킬라 </td>
+                <td> 테킬라 2/4, <br> 코앙트로 1/4, <br> 라임주스 1/4 </td>
+                <td> 글래스에 레몬이나 라임으로 가장자리를 적신 후 소금을 묻혀 스노우 스타일로 장식한다.<br> 얼음과 함께 테낄라 2/4, 코앙트로 1/4, 라임 주스 1/4를 셰이커에 넣은후 흔든다. </td>
+                <td><a href="https://www.youtube.com/watch?v=4anQ-iAh3fE"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 롱아일랜드 아이스티(롱티) </td>
+                <td><img src="cocktail/롱아일랜드 아이스티.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 35 </td>
+                <td> Gin </td>
+                <td> 드라이진 15ml, 럼 15ml, 보드카 15ml, 테킬라 15ml, <br> 코앙뜨로우 2tsp, 레몬 주스 30ml, 설탕 2tsp, <br> 콜라 잔량부분, 레몬슬라이스 1장 </td>
+                <td> 드라이진, 럼, 보드카, 테킬라, 코앙뜨로우, <br> 레몬주스, 설탕을 크래슈드 아이스를 넣은 글래스에 넣고 난 후, <br> 나머지를 콜라로 채워 젓은 후에 레몬으로 장식 </td>
+                <td><a href="https://www.youtube.com/watch?v=MktCrcnJQ3s"> 동영상 링크 </a></td>
+              </tr>
+             <tr>
+                <td> 러스티네일 </td>
+                <td><img src="cocktail/러스티네일.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 40 </td>
+                <td> Whisky </td>
+                <td> 스카치 위스키 30ml, 드란부이 30ml </td>
+                <td> 스카치 위스키와 드란부이를 글래스에 붓는다. 그러고 난 후에 <br> 얼음을 넣어서 온 더 록 스타일로 한 후, 가볍게 젓는다 </td>
+                <td><a href="https://www.youtube.com/watch?v=_VYBF1Di6PM"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 모스코뮬 </td>
+                <td><img src="cocktail/모스코뮬.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 10% </td>
+                <td> Vodka </td>
+                <td> 보드카 30~45ml, 레몬 주스 15ml, <br> 진저 비어 적당량, 장식용 레몬, 앙고스투라 비터 1대쉬 </td>
+                <td> 머그잔에 얼음 2~3개를 넣는다. 보드카를 우선 위에 따르고 <br> 그 뒤에 레몬 주스를 넣는다. 나머지는 차갑게 만든 <br> 진저비어를 채우고 젓는다 </td>
+                <td><a href="https://www.youtube.com/watch?v=W9sKUuN0wG8"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 솔티 독 </td>
+                <td><img src="cocktail/솔티독.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 15 </td>
+                <td> Vodka </td>
+                <td> 보드카 1온스, 그레이프 프루트 주스 적당량 </td>
+                <td> 글래스에 보드카를 넣고 주스를 적당량 채운 뒤, 글래스에서 저어 준다 </td>
+                <td><a href="https://www.youtube.com/watch?v=j80kzVaB9QI"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 쿠바리브레 </td>
+                <td><img src="cocktail/쿠바리브레.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 14 </td>
+                <td> Rum </td>
+                <td> 라이트 럼 45ml, 라임 1/6개분, 콜라 </td>
+                <td> 텀블러에 럼을 넣고 자른 라임을 글래스에 넣는다. <br> 그리고 난 후에 얼음을 넣고 콜라로 채운다.  </td>
+                <td><a href="https://www.youtube.com/watch?v=T6fd3fHjz7A"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 맨하탄 </td>
+                <td><img src="cocktail/맨하탄.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 32 </td>
+                <td> Whisky </td>
+                <td> 라이 위스키 2/3, 스위트 베르무트 1/3, <br> 앙고스투라 비터 1dash, 마라스키노 체리 1개 </td>
+                <td> 위스키와 스위트 베르무트, 앙고스투라 비터를 혼합 글래스에 넣어서 젓는다. <br> 칵테일 잔에 부어서 마라스키노 체리로 장식한다.</td>
+                <td><a href="https://www.youtube.com/watch?v=rgDHxJOewVk"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 코스모폴리탄 </td>
+                <td><img src="cocktail/코스모폴리탄.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 약 20 </td>
+                <td> Vodka </td>
+                <td> 시트론 향 보드카 40ml, 코앵트로 15ml, <br> 라임 주스 15ml, 크랜베리 주스 30ml </td>
+                <td> 재료를 셰이커에 넣고 얼음을 채운뒤 쉐이크 <br> 차게 식혀 둔 잔에 촘촘히 걸러 따른다. </td>
+                <td><a href="https://www.youtube.com/watch?v=kjo7jR6kHdg"> 동영상 링크 </a></td>
+              </tr>
+              <tr>
+                <td> 블루하와이 </td>
+                <td><img src="cocktail/블루하와이.jpg" width="100px" height="80px"></td>
+                <td> 스타일1 </td>
+                <td> 20 </td>
+                <td> Rum </td>
+                <td> 화이트 럼 30ml, 블루 큐라소 15ml, <br> 파인애플 주스 30ml, 레몬 주스 15ml </td>
+                <td> 화이트 럼, 블루 큐라소, 파인애플 주스, 레몬주스를 셰이커에 넣고 흔든다. <br> 잘게 부슨 얼음을 채운 글래스에 따르고, 과일이나 꽃을 장식 </td>
+                <td><a href="https://www.youtube.com/watch?v=WEI0Id7QYUw"> 동영상 링크 </a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p></p>
+        </div>
+</section>
+  </body>
+</html>
